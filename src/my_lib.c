@@ -5,5 +5,5 @@
 #include "my_lib.h"
 
 void print_hell_world(){
-    printf("Hello, Another World!\n");
+    printf("Hello, Another World2!\n");
 }
