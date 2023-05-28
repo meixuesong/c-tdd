@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "my_lib.h"
+#include "../src/my_lib.h"
 
 int main() {
     print_hell_world();

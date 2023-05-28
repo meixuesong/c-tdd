@@ -3,9 +3,9 @@ project(udemy_cmake_learn1 VERSION 1.0.0 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(Library STATIC my_lib.c)
+add_library(Library STATIC src/my_lib.c)
 
-add_executable(udemy_cmake_learn1 main.c)
+add_executable(udemy_cmake_learn1 app/main.c)
 
 #为了让my_lib.c起作用，需要将Library链接到udemy_cmake_learn1
 # udemy_cmake_learn1依赖于Library
