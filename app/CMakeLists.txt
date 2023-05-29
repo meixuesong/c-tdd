@@ -7,7 +7,11 @@ add_executable(${EXECUTABLE_NAME} ${EXECUTABLE_SOURCE_FILES})
 # 可以单独build Library，也可以单独build udemy_cmake_learn1
 # cmake --build . --target Library
 # cmake --build . --target udemy_cmake_learn1
-target_link_libraries(${EXECUTABLE_NAME} PUBLIC ${LIBRARY_NAME})
+target_link_libraries(${EXECUTABLE_NAME} PUBLIC
+        ${LIBRARY_NAME}
+        # 因为nlohmann_json是C++库，所以需要使用C++编译器，因此不支持。
+#        nlohmann_json
+        )
 
 # 如果想只编译部分，例如只编译某个target（就是add_executable, add_library的第一个参数)，可以使用两种方式实现：
 # 1. cmake --build . --target udemy_cmake_learn1

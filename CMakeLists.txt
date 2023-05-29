@@ -17,6 +17,11 @@ set(EXECUTABLE_NAME "udemy-cmake-learn1")
 # -D 可以用于参数和option
 option(COMPILE_EXECUTABLE "Whether to compile executable" OFF)
 
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+include(AddGitSubmodule)
+add_git_submodule(external/json)
+# 当我们增加了一个git submodule后，git clone时要加参数：
+# git clone --recursive url
 
 #src要在前面
 add_subdirectory(src)
