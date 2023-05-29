@@ -19,9 +19,20 @@ option(COMPILE_EXECUTABLE "Whether to compile executable" OFF)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 include(AddGitSubmodule)
-add_git_submodule(external/json)
+#add_git_submodule(external/json)
 # 当我们增加了一个git submodule后，git clone时要加参数：
 # git clone --recursive url
+
+include(FetchContent)
+
+# 这样的项目必须是CMake项目
+FetchContent_Declare(
+        nlohmann_json
+        GIT_REPOSITORY https://github.com/nlohmann/json.git
+        GIT_TAG v3.9.1
+        GIT_SHALLOW TRUE
+)
+FetchContent_MakeAvailable(nlohmann_json)
 
 #src要在前面
 add_subdirectory(src)
