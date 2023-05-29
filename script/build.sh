@@ -8,4 +8,4 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
-./udemy_cmake_learn1
+app/udemy-cmake-learn1

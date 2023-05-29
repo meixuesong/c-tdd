@@ -15,29 +15,19 @@ set(EXECUTABLE_NAME "udemy-cmake-learn1")
 #然后可以在命令行传参数进来
 #cmake -DCOMPILE_EXECUTABLE=ON ..
 # -D 可以用于参数和option
-option(COMPILE_EXECUTABLE "Whether to compile executable" OFF)
+option(COMPILE_EXECUTABLE "Whether to compile executable" ON)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
-include(AddGitSubmodule)
+#include(AddGitSubmodule)
 #add_git_submodule(external/json)
 # 当我们增加了一个git submodule后，git clone时要加参数：
 # git clone --recursive url
 
-include(FetchContent)
-
-# 这样的项目必须是CMake项目
-FetchContent_Declare(
-        nlohmann_json
-        GIT_REPOSITORY https://github.com/nlohmann/json.git
-        GIT_TAG v3.9.1
-        GIT_SHALLOW TRUE
-)
-FetchContent_MakeAvailable(nlohmann_json)
-
 #src要在前面
 add_subdirectory(src)
-if (COMPILE_EXECUTABLE)
-    add_subdirectory(app)
-else ()
-    message("Without exe. compiling")
-endif ()
+#if (COMPILE_EXECUTABLE)
+add_subdirectory(app)
+#else ()
+#    message("Without exe. compiling")
+#endif ()
+add_subdirectory(tests)
