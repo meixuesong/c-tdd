@@ -25,7 +25,7 @@ message(STATUS "cmake source dir ${CMAKE_SOURCE_DIR} ${CMAKE_CURRENT_LIST_DIR}")
 find_package(Catch2 3 REQUIRED)
 # These tests can use the Catch2-provided main
 
-add_executable(${TEST_MAIN} main.cpp another_unit_tests.cpp)
+add_executable(${TEST_MAIN} main.cpp another_unit_tests.cpp c_pointer_book_chapter1_test.cpp)
 target_include_directories(${TEST_MAIN} PUBLIC
         ${TEST_INCLUDES}
         ${CMAKE_SOURCE_DIR}/src
